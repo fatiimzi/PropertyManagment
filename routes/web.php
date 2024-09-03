@@ -35,10 +35,9 @@ Route::get('register', [AuthController::class, 'showRegisterForm'])->name('regis
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
-    Route::middleware(['auth:api'])->group(function () {
 
 // Protected routes for authenticated users
-// Route::group(['middleware' => ['jwt.auth']], function () {
+ //Route::group(['middleware' => ['jwt.auth']], function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('dashboard', function () {
         return redirect()->route('properties.proprerties_list');
@@ -59,4 +58,3 @@ Route::post('login', [AuthController::class, 'login']);
 
 
     Route::resource('payments', PaymentController::class);
-  });

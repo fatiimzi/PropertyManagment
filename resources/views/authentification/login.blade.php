@@ -42,7 +42,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     // Get the CSRF token from the meta tag
     // const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content');
-    fetch('http://127.0.0.1:8000/login', {
+    fetch('http://127.0.0.1:8000/api/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
