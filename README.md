@@ -1,59 +1,91 @@
-managmentApp Application Setup Guide
-Overview
-This guide provides instructions on setting up and running this application using XAMPP with SQL.
-Prerequisites
-1.	XAMPP: Ensure you have XAMPP installed. You can download it from Apache Friends.
-2.	Composer: Install Composer for PHP package management. You can get it from getcomposer.org.
-3.	PHP: Make sure PHP is installed and configured in your XAMPP environment.
-4.	Laravel: The application is built with Laravel. Familiarity with Laravel will be beneficial.
-Setup Instructions
-1. Clone the Repository
-Clone the repository to your local machine :
-git clone https://github.com/fatiimzi/PropertyManagment.gitcd your-laravel-app
-cd propertymanagment
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Setup Guide</title>
+</head>
+<body>
+    <h1>Application Setup Guide</h1>
 
-2. Install Dependencies
-Run Composer to install PHP dependencies:
-composer install 
-composer install
-3. Configure Environment
-Copy the .env.example file to create a new .env file:
-cp .env.example .env
+    <h2>Overview</h2>
+    <p>This guide provides instructions on setting up and running this application using XAMPP with SQL.</p>
 
-Open the .env file and update the database configuration to match your XAMPP settings:
-DB_CONNECTION=mysql
+    <h2>Prerequisites</h2>
+    <ul>
+        <li><strong>XAMPP:</strong> Ensure you have XAMPP installed. You can download it from <a href="https://www.apachefriends.org/index.html">Apache Friends</a>.</li>
+        <li><strong>Composer:</strong> Install Composer for PHP package management. You can get it from <a href="https://getcomposer.org/">getcomposer.org</a>.</li>
+        <li><strong>PHP:</strong> Make sure PHP is installed and configured in your XAMPP environment.</li>
+        <li><strong>Laravel:</strong> The application is built with Laravel. Familiarity with Laravel will be beneficial.</li>
+    </ul>
+
+    <h2>Setup Instructions</h2>
+    <ol>
+        <li>
+            <h3>Clone the Repository</h3>
+            <p>Clone the repository to your local machine:</p>
+            <pre><code>git clone https://github.com/fatiimzi/PropertyManagment.git
+cd PropertyManagment</code></pre>
+        </li>
+        <li>
+            <h3>Install Dependencies</h3>
+            <p>Run Composer to install PHP dependencies:</p>
+            <pre><code>composer install</code></pre>
+        </li>
+        <li>
+            <h3>Configure Environment</h3>
+            <p>Copy the <code>.env.example</code> file to create a new <code>.env</code> file:</p>
+            <pre><code>cp .env.example .env</code></pre>
+            <p>Open the <code>.env</code> file and update the database configuration to match your XAMPP settings:</p>
+            <pre><code>DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=propertymanagment
 DB_USERNAME=root
-DB_PASSWORD=
-4. Generate Application Key
-Generate a new application key:
+DB_PASSWORD=</code></pre>
+        </li>
+        <li>
+            <h3>Generate Application Key</h3>
+            <p>Generate a new application key:</p>
+            <pre><code>php artisan key:generate</code></pre>
+        </li>
+        <li>
+            <h3>Create the Database</h3>
+            <ol>
+                <li>Open XAMPP Control Panel and start Apache and MySQL.</li>
+                <li>Access phpMyAdmin via <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a>.</li>
+                <li>Create a new database with the name specified in your <code>.env</code> file (propertymanagment).</li>
+            </ol>
+        </li>
+        <li>
+            <h3>Run Migrations</h3>
+            <p>Apply migrations to set up the database schema:</p>
+            <pre><code>php artisan migrate</code></pre>
+        </li>
+        <li>
+            <h3>Seed the Database (Optional)</h3>
+            <p>If you have seeders set up, you can populate the database with sample data:</p>
+            <pre><code>php artisan db:seed</code></pre>
+        </li>
+        <li>
+            <h3>Start the Development Server</h3>
+            <p>Run the Laravel development server:</p>
+            <pre><code>php artisan serve</code></pre>
+            <p>The application will be available at <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+        </li>
+        <li>
+            <h3>Access the Application</h3>
+            <p>Open your web browser and navigate to <a href="http://localhost:8000">http://localhost:8000</a> to view the application.</p>
+        </li>
+    </ol>
 
-php artisan key:generate
+    <h2>Additional Commands</h2>
+    <ul>
+        <li><strong>Clear Cache:</strong> <pre><code>php artisan cache:clear</code></pre></li>
+        <li><strong>View Routes:</strong> <pre><code>php artisan route:list</code></pre></li>
+        <li><strong>Run Tests:</strong> <pre><code>php artisan test</code></pre></li>
+    </ul>
+</body>
+</html>
 
-5. Create the Database
-1.	Open XAMPP Control Panel and start Apache and MySQL.
-2.	Access phpMyAdmin via http://localhost/phpmyadmin.
-3.	Create a new database with the name specified in your .env file (propertymanagment).
-6. Run Migrations
-Apply migrations to set up the database schema:
-php artisan migrate
-
-7. Seed the Database (Optional)
-If you have seeders set up, you can populate the database with sample data:
-php artisan db:seed
-
-8. Start the Development Server
-Run the Laravel development server:
-php artisan serve
-
-The application will be available at http://localhost:8000.
-9. Access the Application
-
-Open your web browser and navigate to http://localhost:8000 to view the application.
-Additional Commands
-•	Clear Cache: php artisan cache:clear
-•	View Routes: php artisan route:list
-•	Run Tests: php artisan test
 
