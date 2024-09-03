@@ -1,0 +1,13 @@
+/* resources/css/app.css */
+.card {
+    border-radius: 10px;
+}
+
+.card-title {
+    color: #d30202;
+    font-weight: bold;
+}
+
+.alert {
+    border-radius: 5px;
+}

@@ -2,15 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Payment extends Model
 {
-    protected $fillable = ['tenant_id', 'amount', 'payment_date', 'is_settled'];
+    protected $fillable = [
+        'tenant_id',
+        'property_id',
+        'payment_date',
+        'amount',
+        'is_settled',
+    ];
 
     public function tenant()
     {
         return $this->belongsTo(Tenant::class);
+    }
+
+    public function property()
+    {
+        return $this->belongsTo(Property::class);
     }
 }

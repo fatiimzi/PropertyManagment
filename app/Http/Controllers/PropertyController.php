@@ -11,12 +11,12 @@ class PropertyController extends Controller
     public function index()
     {
         $properties = Property::all();
-        return view('properties.index', compact('properties'));
+        return view('properties.proprerties_list', compact('properties'));
     }
 
     public function create()
     {
-        return view('properties.create');
+        return view('properties.create_prop');
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class PropertyController extends Controller
 
     public function edit(Property $property)
     {
-        return view('properties.edit', compact('property'));
+        return view('properties.edit_prop', compact('property'));
     }
 
     public function update(Request $request, Property $property)
