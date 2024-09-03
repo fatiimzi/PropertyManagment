@@ -7,10 +7,8 @@
 </head>
 <body>
     <h1>Application Setup Guide</h1>
-
     <h2>Overview</h2>
     <p>This guide provides instructions on setting up and running this application using XAMPP with SQL.</p>
-
     <h2>Prerequisites</h2>
     <ul>
         <li><strong>XAMPP:</strong> Ensure you have XAMPP installed. You can download it from <a href="https://www.apachefriends.org/index.html">Apache Friends</a>.</li>
@@ -18,14 +16,12 @@
         <li><strong>PHP:</strong> Make sure PHP is installed and configured in your XAMPP environment.</li>
         <li><strong>Laravel:</strong> The application is built with Laravel. Familiarity with Laravel will be beneficial.</li>
     </ul>
-
     <h2>Setup Instructions</h2>
     <ol>
         <li>
             <h3>Clone the Repository</h3>
             <p>Clone the repository to your local machine:</p>
-            <pre><code>git clone https://github.com/fatiimzi/PropertyManagment.git
-cd PropertyManagment</code></pre>
+            <pre><code>git clone https://github.com/fatiimzi/PropertyManagment.gitcd PropertyManagment</code></pre>
         </li>
         <li>
             <h3>Install Dependencies</h3>
@@ -38,11 +34,11 @@ cd PropertyManagment</code></pre>
             <pre><code>cp .env.example .env</code></pre>
             <p>Open the <code>.env</code> file and update the database configuration to match your XAMPP settings:</p>
             <pre><code>DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=propertymanagment
-DB_USERNAME=root
-DB_PASSWORD=</code></pre>
+          DB_HOST=127.0.0.1
+           DB_PORT=3306
+          DB_DATABASE=propertymanagment
+          DB_USERNAME=root
+         DB_PASSWORD=</code></pre>
         </li>
         <li>
             <h3>Generate Application Key</h3>
@@ -81,7 +77,7 @@ DB_PASSWORD=</code></pre>
 
     <h2>Additional Commands</h2>
     <ul>
-        <li><strong>Clear Cache:</strong> <pre><code>php artisan cache:clear</code></pre></li>
+	    <li><strong>Clear Cache:</strong> <pre><code>php artisan cache:clear</code></pre></li>
         <li><strong>View Routes:</strong> <pre><code>php artisan route:list</code></pre></li>
         <li><strong>Run Tests:</strong> <pre><code>php artisan test</code></pre></li>
     </ul>
